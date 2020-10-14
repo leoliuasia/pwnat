@@ -152,7 +152,7 @@ int sock_connect(socket_t *sock, int is_serv, char *port)
 	sa.sin_addr.s_addr = htonl(INADDR_ANY);
 
     setsockopt(sock->fd, SOL_SOCKET, SO_REUSEADDR, &reuseaddr, sizeof(int));
-    setsockopt(sock->fd, SOL_SOCKET, SO_REUSEPORT, &reuseport, sizeof(int));
+    // setsockopt(sock->fd, SOL_SOCKET, SO_REUSEPORT, &reuseport, sizeof(int));
  
 	if(sock->type == SOCK_DGRAM)
 		if( bind(sock->fd, (const struct sockaddr *)&sa, sizeof(struct sockaddr_in))!= 0)
